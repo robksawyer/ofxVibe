@@ -1,31 +1,30 @@
 #include "ofApp.h"
 
-
 //--------------------------------------------------------------
 void ofApp::setup(){
-    ofBackground(0, 0, 0);
-    ofSetFrameRate(60);
-    ofSetVerticalSync(true);
-    
-    cam.initGrabber(320,240);
-    vibe.setup(1,20,4,17,2,16);
+	ofBackground(0, 0, 0);
+	ofSetFrameRate(60);
+	ofSetVerticalSync(true);
+	
+	cam.initGrabber(320,240);
+	vibe.setup(1,20,4,17,2,16);
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    cam.update();
-    
-    if(cam.isFrameNew()){
-        vibe.update(cam);
-    }
+	cam.update();
+	
+	if(cam.isFrameNew()){
+		vibe.update(cam);
+	}
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    cam.draw(0, 0);
-    vibe.drawCurrentFrame(320, 0);
-    vibe.drawForeground(640,0);
-    vibe.drawMask(0, 240);
+	cam.draw(0, 0);
+	vibe.drawCurrentFrame(320, 0);
+	vibe.drawForeground(640,0);
+	vibe.drawMask(0, 240);
 }
 
 //--------------------------------------------------------------
@@ -55,6 +54,16 @@ void ofApp::mousePressed(int x, int y, int button){
 
 //--------------------------------------------------------------
 void ofApp::mouseReleased(int x, int y, int button){
+
+}
+
+//--------------------------------------------------------------
+void ofApp::mouseEntered(int x, int y){
+
+}
+
+//--------------------------------------------------------------
+void ofApp::mouseExited(int x, int y){
 
 }
 
